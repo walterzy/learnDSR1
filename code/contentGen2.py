@@ -13,8 +13,9 @@ def generate_product_description(product_name, product_features):
     data = {
             "model": "deepseek-chat",
             'prompt': prompt,
-            'max_tokens': 150, # Adjust the maximum length based on your preference
-            'temperature': 0.7 # Adjust temperature for creativity
+            "messages": [
+                {"role": "user", "content": "how to resolve 404 error?"}
+            ]
             }
     try:
         response = requests.post(API_URL, headers=headers, data=json.dumps(data))
