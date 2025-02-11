@@ -1,6 +1,6 @@
-import json, requests
+import json, requests, os
 
-API_KEY = "sk-dc8a218f20ce43328d2b7eab7ef27162" # Replace with your actual DeepSeek API Key
+API_KEY = os.getenv("DS_API_KEY")
 API_URL = "https://api.deepseek.com/v1/chat/completions" # Replace with your DeepSeek API Endpoint
 
 headers = {
@@ -9,9 +9,9 @@ headers = {
         }
 
 def generate_product_description(product_name, product_features):
-    prompt = f"Generate a compelling product description for a product named '{product_name}' with the following features: {product_features}."
+    prompt = f"Generate a compelling product description for a product named '{product_name}' with the following features: {product_features}.", os
     data = {
-            "model": "deepseek-chat",
+            "model": "deepseek-chat",API_KEY = os.getenv("DS_API_KEY")
             'prompt': prompt,
             'max_tokens': 150, # Adjust the maximum length based on your preference
             'temperature': 0.7 # Adjust temperature for creativity

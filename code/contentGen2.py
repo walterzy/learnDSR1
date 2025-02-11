@@ -1,6 +1,6 @@
-import json, requests
+import json, requests, os
 
-API_KEY = "sk-dc8a218f20ce43328d2b7eab7ef27162" # Replace with your actual DeepSeek API Key
+API_KEY = os.getenv("DS_API_KEY")
 API_URL = "https://api.deepseek.com/v1/chat/completions" # Replace with your DeepSeek API Endpoint
 
 headers = {
