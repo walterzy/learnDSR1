@@ -64,15 +64,12 @@ def call_deepseek_api(prompt, use_proxy=False, timeout=20):
     return None
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="To use proxy or not")
-    parser.add_argument("-p", "--proxy", type=bool, help="use proxy or not", default=False)
+    parser = argparse.ArgumentParser(description="This is an example program supporint proxy or not.")
+    parser.add_argument("-p", "--proxy", type=bool, help="use proxy or not, booleam type", default=False)
     args = parser.parse_args()
     print(args.proxy)
 
     response = call_deepseek_api("Hello, how are you?", use_proxy=args.proxy)
-    
-    # response = call_deepseek_api("Please intro quant computing", use_proxy=True)
-    
     if response:
         print("API Reponse Content:")
         print(response)

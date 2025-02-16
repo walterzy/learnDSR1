@@ -19,7 +19,8 @@ def generate_product_description(product_name, product_features):
             'messages': messages,
             'max_tokens': 150, # Adjust the maximum length based on your preference
             'temperature': 0.7 # Adjust temperature for creativity
-            }
+    }
+
     try:
         response = requests.post(API_URL, headers=headers, data=json.dumps(data))
         response.raise_for_status()
