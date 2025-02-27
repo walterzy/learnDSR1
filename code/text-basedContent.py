@@ -35,10 +35,14 @@ def generate_content(prompt, max_tokens=200, temperature=0.8):
         response = requests.post(API_URL, headers=headers, data=json.dumps(data))
         response.raise_for_status()
         response_data = response.json()
-        if 'text' in response_data:
-            return response_data['text']
+
+        if response.status_code == 200:
+            # print(response.json())
+            content = response_data['choices'][0]['message']['content']
+            # print(content)
+            return content
         else:
-            return "Error: 'text' key not found in the API response."
+            print(f"error code: {response.status_code}, response: {response.text}")
     except requests.exceptions.RequestException as e:
         return f"Error making API request: {e}"
     except json.JSONDecodeError as e:

@@ -10,7 +10,7 @@ headers = {
 data = {
     "model": "deepseek-chat",
     "messages": [
-        {"role": "user", "content": "how to resolve 404 error?"}
+        {"role": "user", "content": "如何评价魏聃闵这个名字?"}
     ]
 }
 
