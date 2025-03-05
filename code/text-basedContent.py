@@ -1,7 +1,7 @@
 import json, requests, os
 
 API_KEY = os.getenv("DS_API_KEY")
-API_URL = "https://api.deepseek.com/v1/chat/completions"
+API_URL = "https://api.deepseek.com/chat/completions"
 
 headers = {
     'Authorization': f'Bearer {API_KEY}',

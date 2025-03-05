@@ -1,17 +1,11 @@
 # Please install OpenAI SDK first: `pip3 install openai`
 
-# key for: LearnDSR120250210
-# sk-dc8a218f20ce43328d2b7eab7ef27162
-
+import os
 from openai import OpenAI
 
-proxy_servers = {
-   'http': 'http://10.158.100.3:8080',
-   'https': 'https://10.158.100.3:8080',
-}
+API_KEY = os.getenv("DS_API_KEY")
 
-
-client = OpenAI(api_key="sk-dc8a218f20ce43328d2b7eab7ef27162", 
+client = OpenAI(api_key=f'{API_KEY}', 
                 base_url="https://api.deepseek.com")
 
 response = client.chat.completions.create(
